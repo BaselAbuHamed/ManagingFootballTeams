@@ -1,0 +1,354 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: url(images/background2.jpg);
+  margin: 0;
+  padding: 0;
+}
+
+
+/* --------------------------header-------------------------- */
+.menu_bar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #f2f2f2;
+}
+.cart {
+  display: flex;
+  align-items: center;
+}
+
+.cart a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #000;
+}
+
+.cart a img {
+  margin-right: 5px;
+  margin-left: 10px;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+}
+
+.app-name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.app-name span {
+  color: #e74c3c;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+nav ul li a {
+  color: #333;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: #e74c3c;
+}
+/* --------------------------header-------------------------- */
+
+
+
+/* --------------------------footer-------------------------- */
+.main-content {
+  flex: 1;
+}
+
+.footer_content {
+  background-color: #333;
+  color: #fff;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.footer-logo img {
+  width: 50px;
+  height: 50px;
+}
+
+.copywrite-address,
+.contact-info {
+  text-align: center;
+}
+
+.smallest-text {
+  font-size: 12px;
+  margin: 5px 0;
+}
+
+.footer_content a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer_content a:hover {
+  color: #e74c3c;
+}
+
+.smallest-text {
+  font-size: 12px;
+}
+
+/* --------------------------footer-------------------------- */
+
+
+/* --------------------------nav bar-------------------------- */
+
+.navigation {
+  float: left;
+  background-color: #f2f2f2;
+  overflow: hidden;
+  width: 200px;
+  height: 83.4%;
+  position: fixed;
+  top: 50px;
+  left: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navigation ul li {
+  margin-bottom: 10px;
+}
+
+.navigation ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.login-message {
+  position: absolute;
+  right: 20px;
+  font-size: 14px;
+  color: red;
+}
+
+.navigation ul li a:hover {
+  color: #ff0000;
+}
+
+/* --------------------------nav bar-------------------------- */
+
+
+/* --------------------------dashboard-------------------------- */
+.dashboard {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+table th {
+  background-color: #f2f2f2;
+}
+
+.btn-create {
+  display: block;
+  width: 200px;
+  margin: 20px auto;
+  padding: 10px;
+  text-align: center;
+  background-color: #337ab7;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-create:hover {
+  background-color: #23527c;
+}
+
+/* --------------------------dashboard-------------------------- */
+
+
+/* --------------------------create new team-------------------------- */
+.team-players {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.team-players h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.team-players form {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.team-players input[type="text"] {
+  width: 200px;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+.team-players input[type="submit"] {
+  padding: 5px 10px;
+  background-color: #337ab7;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.team-players input[type="submit"]:hover {
+  background-color: #23527c;
+}
+
+.team-players table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+
+.team-players th,
+.team-players td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+.team-players th {
+  font-weight: bold;
+}
+
+.team-players td:last-child {
+  text-align: center;
+}
+
+.team-players td form {
+  display: inline-block;
+}
+
+.team-players td input[type="hidden"] {
+  display: none;
+}
+
+.team-players p {
+  text-align: center;
+  margin-bottom: 10px;
+}
+/* --------------------------create new team-------------------------- */
+
+
+/* --------------------------create new team-------------------------- */
+.registration-table {
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+.registration-table td {
+  padding: 10px;
+}
+
+.registration-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.registration-input {
+  width: 150px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+
+.welcome {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  width: 300px;
+  margin: 0 auto;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+}
+
+tfoot th {
+  text-align: center;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+a {
+  text-decoration: none;
+}
