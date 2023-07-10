@@ -102,64 +102,71 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <body>
 <?php include("classes/header.php"); ?>
 
-<aside>
-    <?php include("nav_bar.php"); ?>
-</aside>
+<div class="body_container">
+    <aside>
+        <?php include("nav_bar.php"); ?>
+    </aside>
 
-    <div class="welcome">
-        <h1>Welcome!</h1>
-    </div>
+    <main>
+        <div class="welcome">
+            <h1>Welcome!</h1>
+        </div>
 
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <table class="registration-table">
-            <thead>
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            <table class="registration-table">
+                <thead>
                 <tr>
                     <th colspan="2">Registration</th>
                 </tr>
-            </thead>
-            <tfoot>
+                </thead>
+                <tfoot>
                 <tr>
                     <th colspan="2"><input type="submit" value="Register"></th>
                 </tr>
-            </tfoot>
-            <tr>
-                <td>Username:</td>
-                <td>
-                    <label>
-                        <input type="text" name="username" value="<?php echo $username; ?>"  class="registration-input">
-                    </label>
-                    <span class="error"><?php echo $usernameErr; ?></span>
-                </td>
-            </tr>
-            <tr>
-                <td>Email:</td>
-                <td>
-                    <label>
-                        <input type="email" name="email" value="<?php echo $email; ?> "  class="registration-input">
-                    </label>
-                    <span class="error"><?php echo $emailErr; ?></span>
-                </td>
-            </tr>
-            <tr>
-                <td>Password:</td>
-                <td>
-                    <label>
-                        <input type="password" name="password" value="<?php echo $password; ?>"  class="registration-input">
-                    </label>
-                    <span class="error"><?php echo $passwordErr; ?></span>
-                </td>
-            </tr>
-            <tr>
-                <td>Confirm Password:</td>
-                <td>
-                    <label>
-                        <input type="password" name="confirm_password" value="<?php echo $confirmPassword; ?>"  class="registration-input">
-                    </label>
-                    <span class="error"><?php echo $confirmPasswordErr; ?></span>
-                </td>
-            </tr>
-        </table>
-    </form>
+                </tfoot>
+                <tr>
+                    <td>Username:</td>
+                    <td>
+                        <label>
+                            <input type="text" name="username" value="<?php echo $username; ?>"  class="registration-input">
+                        </label>
+                        <span class="error"><?php echo $usernameErr; ?></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td>
+                        <label>
+                            <input type="email" name="email" value="<?php echo $email; ?> "  class="registration-input">
+                        </label>
+                        <span class="error"><?php echo $emailErr; ?></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Password:</td>
+                    <td>
+                        <label>
+                            <input type="password" name="password" value="<?php echo $password; ?>"  class="registration-input">
+                        </label>
+                        <span class="error"><?php echo $passwordErr; ?></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Confirm Password:</td>
+                    <td>
+                        <label>
+                            <input type="password" name="confirm_password" value="<?php echo $confirmPassword; ?>"  class="registration-input">
+                        </label>
+                        <span class="error"><?php echo $confirmPasswordErr; ?></span>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </main>
+
+
+</div>
+
 
     <?php include("classes/footer.php"); ?>
 </body>

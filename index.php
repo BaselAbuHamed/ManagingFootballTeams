@@ -1,7 +1,9 @@
 <?php
 include 'classes/connect.php';
 session_start();
-
+if(isset($_SESSION['Uname'])){
+    header("Location: dashboard.php");
+}
 // Check if the user clicked on the logout link on the index.php page
 if (isset($_GET['logout'])) {
     // Destroy the session
@@ -15,6 +17,7 @@ if (isset($_GET['logout'])) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
+    $_SESSION['Uname']=$email;
 
     // Check if the "Remember Me" checkbox is checked
     if (isset($_POST['remember'])) {
@@ -90,7 +93,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </aside>
 
     <main>
-
 
         <div class="welcome">
             <h1>Welcome !</h1>

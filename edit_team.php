@@ -68,15 +68,17 @@ function fetchUserTeams($userId) {
         <?php include("nav_bar.php"); ?>
     </aside>
     <main>
+        <div class="welcome">
+            <h1>Edit Team</h1>
+        </div>
         <div class="team-list">
-        <h2>Edit Team</h2>
         <table>
             <thead>
             <tr>
                 <th>Team Name</th>
                 <th>Skill Level</th>
                 <th>Game Day</th>
-                <th>Action</th>
+                <th>Update</th>
             </tr>
             </thead>
             <tbody>
@@ -85,7 +87,12 @@ function fetchUserTeams($userId) {
                     <td><?php echo $team['teamName']; ?></td>
                     <td><?php echo $team['skillLevel']; ?></td>
                     <td><?php echo $team['gameDay']; ?></td>
-                    <td><a href="update_team.php?id=<?php echo $team['teamID']; ?>">Update</a></td>
+                    <td>
+                        <form action="update_team.php" method="get">
+                            <input type="hidden" name="id" value="<?php echo $team['teamID']; ?>">
+                            <button type="submit">Update</button>
+                        </form>
+                    </td>
                 </tr>
             <?php endforeach; ?>
             </tbody>

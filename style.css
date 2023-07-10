@@ -7,11 +7,51 @@ body {
     margin: 0;
 }
 
+
+/*done*/
+/* --------------------------page design-------------------------- */
+.body_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin-left: 250px;
+
+}
+
+.welcome {
+    margin-top: 50px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    width: 300px;
+    margin: 0 auto;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+/* --------------------------page design-------------------------- */
+
+
+/*done*/
 /* --------------------------header-------------------------- */
 .menu_bar{
     display: flex;
     align-items: center;
-    position: marker;
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: 260px;
+    /*width: 100%;*/
     justify-content: space-between;
     padding-left: 10px;
     padding-right: 10px;
@@ -71,6 +111,7 @@ nav ul li a:hover {
 /* --------------------------header-------------------------- */
 
 
+/*done*/
 /* --------------------------footer-------------------------- */
 /* Footer styles */
 .footer_content {
@@ -114,24 +155,25 @@ nav ul li a:hover {
 /* --------------------------footer-------------------------- */
 
 
-
-.body_container {
-    display: flex;
-}
-
+/*done*/
 /* --------------------------nav bar-------------------------- */
 aside {
     width: 20%;
     float: left;
     overflow: visible;
+    position: fixed;
+    left: 0;
     height: 100%;
-
+    background-color: #f2f2f2;
+    box-sizing: border-box;
 }
 
-/*.navigation {*/
-/*    padding: 20px;*/
-/*    box-sizing: border-box;*/
-/*}*/
+.navigation {
+    float: left;
+    padding: 20px;
+    height: 100%;
+    box-sizing: border-box;
+}
 
 .navigation ul {
     list-style: none;
@@ -157,16 +199,9 @@ aside {
 }
 
 /* --------------------------nav bar-------------------------- */
-main {
-    right: auto;
-    padding: 20px;
-    margin-left: 200px;
-    justify-content: space-between;
-    flex-direction: column;
-}
 
 
-
+/*done*/
 /* --------------------------dashboard-------------------------- */
 .dashboard {
     max-width: 800px;
@@ -207,6 +242,7 @@ table th {
 /* --------------------------dashboard-------------------------- */
 
 
+/*done*/
 /* --------------------------create new team-------------------------- */
 .team-players {
     max-width: 600px;
@@ -231,6 +267,14 @@ table th {
 }
 
 .team-players input[type="submit"] {
+    padding: 5px 10px;
+    background-color: #337ab7;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.team-players button {
     padding: 5px 10px;
     background-color: #337ab7;
     color: #fff;
@@ -278,56 +322,37 @@ table th {
 /* --------------------------create new team-------------------------- */
 
 
-.registration-table {
-    margin: 0 auto;
-    border-collapse: collapse;
-}
-
-.registration-table td {
-    padding: 10px;
-}
-
-.registration-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.registration-input {
+/*done/
+/* --------------------------registration-------------------------- */
+.registration-input,.creat_team_input {
     width: 150px;
     padding: 10px;
     margin-bottom: 10px;
 }
+/* --------------------------registration-------------------------- */
 
 
-.welcome {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-form {
-    width: 300px;
-    margin: 0 auto;
-    background-color: #f2f2f2;
-    padding: 20px;
-}
-
+/*done*/
+/* --------------------------table-------------------------- */
 table {
     width: 100%;
     border-collapse: collapse;
 }
 
-th,
+
 td {
-    padding: 8px;
+    padding: 10px;
     text-align: left;
 }
 
 tfoot th {
     text-align: center;
 }
+/* --------------------------table-------------------------- */
 
+
+/*done*/
+/* --------------------------input and output-------------------------- */
 .error-message {
     color: red;
     margin-bottom: 10px;
@@ -352,6 +377,14 @@ input[type="submit"] {
     border: none;
     cursor: pointer;
 }
+button{
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
 
 input[type="submit"]:hover {
     background-color: #45a049;
@@ -360,3 +393,4 @@ input[type="submit"]:hover {
 a {
     text-decoration: none;
 }
+/* --------------------------input and output-------------------------- */

@@ -53,14 +53,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_player'])) {
     }
 }
 
-// Check if the user is deleting a player
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_player'])) {
-    $playerId = $_POST['player_id'];
-
-    // Delete the player from the database
-    $stmt = $pdo->prepare("DELETE FROM teamplayers WHERE playerID = :player_id");
-    $stmt->bindParam(':player_id', $playerId);
+// Check if the user is deleting the team
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_team'])) {
+    // Delete the team from the database
+    $stmt = $pdo->prepare("DELETE FROM team WHERE teamID = :team_id");
+    $stmt->bindParam(':team_id', $teamId);
     $stmt->execute();
+
+    // Redirect to the dashboard or any other page after deletion
+    header("Location: dashboard.php");
+    exit();
 }
 
 
@@ -103,18 +105,17 @@ $players = $stmt->fetchAll();
             <p>Number of Players: <?php echo count($players); ?></p>
         </div>
 
+
         <div class="team-players">
             <h2>Players in the Team</h2>
+            <?php if (!empty($error)) : ?>
+                <p><?php echo $error; ?></p>
+            <?php endif; ?>
             <?php if ($teamCreator) : ?>
-                <a href="update_team.php?id=<?php echo $teamId; ?>" class="btn-update">Update Team</a>
-
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . '?id=' . $teamId; ?>" method="post">
                     <input type="text" name="player_name" placeholder="Player Name" required>
                     <input type="submit" name="add_player" value="Add Player">
                 </form>
-            <?php endif; ?>
-            <?php if (!empty($error)) : ?>
-                <p><?php echo $error; ?></p>
             <?php endif; ?>
             <?php if (count($players) > 0) : ?>
                 <table>
@@ -145,17 +146,23 @@ $players = $stmt->fetchAll();
             <?php else : ?>
                 <p>No players in the team.</p>
             <?php endif; ?>
+
+            <?php if ($teamCreator) : ?>
+
+<!--                <a href="update_team.php?id=--><?php //echo $teamId; ?><!--" class="btn-update">Update Team</a>-->
+
+                <form action="update_team.php" method="get">
+                    <input type="hidden" name="id" value="<?php echo $teamId; ?>">
+                    <button type="submit" >Update Team</button>
+                </form>
+
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . '?id=' . $teamId; ?>" method="post">
+                    <input type="submit" name="delete_team" value="Delete Team" onclick="return confirm('Are you sure you want to delete this team?')">
+                </form>
+            <?php endif; ?>
         </div>
     </main>
-
 </div>
-
-
-
-
     <?php include("classes/footer.php"); ?>
-
-
 </body>
-
 </html>

@@ -4,13 +4,14 @@ session_start();
 
 $username = isset($_SESSION['username']) ? $_SESSION['username'] : null;
 
-$firstLogin = false;
-if (isset($_SESSION['first_login'])) {
-    $_SESSION['first_login'] = true;
-    $firstLogin = true;
-}
+if (isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
 
-// Get the username from the session
+    if (isset($_SESSION['firstLogin']) && $_SESSION['firstLogin']) {
+        // Display welcome message for first login
+        $_SESSION['firstLogin'] = false; // Set first login to false
+    }
+}
 
 
 // Fetch teams from the database
@@ -52,6 +53,7 @@ $teams = fetchTeams();
 
 <body>
 <?php include("classes/header.php"); ?>
+
 <div class="body_container">
     
     <aside>
@@ -61,7 +63,7 @@ $teams = fetchTeams();
     <main>
         <div class="welcome">
             <h1>Team Dashboard</h1>
-            <?php if ($firstLogin) : ?>
+            <?php if (isset($_SESSION['firstLogin'])) : ?>
                 <h1>Welcome, <?php echo $username; ?>!</h1>
             <?php else : ?>
                 <h1>Welcome back, <?php echo $username; ?>!</h1>

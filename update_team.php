@@ -99,24 +99,28 @@ $team = fetchTeamDetails($teamID);
     </aside>
 
     <main>
-        <div class="update-team">
+        <div class="welcome">
             <h1>Update Team</h1>
+        </div>
+
+        <div class="update-team">
+
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . '?id=' . $teamID; ?>" method="post">
                 <table>
                     <tr>
                         <td><label for="team_name">Team Name:</label></td>
-                        <td><input type="text" id="team_name" name="team_name" value="<?php echo $team['teamName']; ?>" required></Continuing from where we left off:
+                        <td><input type="text" id="team_name" name="team_name" value="<?php echo $team['teamName']; ?>" class="creat_team_input" required></Continuing from where we left off:
 
                             ```html
                         </td>
                     </tr>
                     <tr>
                         <td><label for="skill_level">Skill Level (1-5):</label></td>
-                        <td><input type="number" id="skill_level" name="skill_level" min="1" max="5" value="<?php echo $team['skillLevel']; ?>" required></td>
+                        <td><input type="range" id="skill_level" name="skill_level" min="1" max="5" value="<?php echo $team['skillLevel']; ?>" class="creat_team_input" required></td>
                     </tr>
                     <tr>
                         <td><label for="game_day">Game Day:</label></td>
-                        <td><input type="text" id="game_day" name="game_day" value="<?php echo $team['gameDay']; ?>" required></td>
+                        <td><input type="text" id="game_day" name="game_day" value="<?php echo $team['gameDay']; ?>" class="creat_team_input" required></td>
                     </tr>
                     <?php if (!empty($errors)) : ?>
                         <tr>

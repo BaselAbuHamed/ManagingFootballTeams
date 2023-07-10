@@ -87,15 +87,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <table>
                     <tr>
                         <td><label for="team_name">Team Name:</label></td>
-                        <td><input type="text" id="team_name" name="team_name" required></td>
+                        <td><input type="text" id="team_name" name="team_name" class="creat_team_input" required></td>
                     </tr>
                     <tr>
                         <td><label for="skill_level">Skill Level (1-5):</label></td>
-                        <td><input type="number" id="skill_level" name="skill_level" min="1" max="5" required></td>
+                        <td><input type="range" id="skill_level" name="skill_level" min="1" max="5" class="creat_team_input" required></td>
                     </tr>
                     <tr>
                         <td><label for="game_day">Game Day:</label></td>
-                        <td><input type="text" id="game_day" name="game_day" required></td>
+                        <td><input type="text" id="game_day" name="game_day" class="creat_team_input" required></td>
                     </tr>
                     <?php if (!empty($errors)) : ?>
                         <tr>
