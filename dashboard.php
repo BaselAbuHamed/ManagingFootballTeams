@@ -18,19 +18,22 @@ if (isset($_SESSION['username'])) {
 function fetchTeams()
 {
     try {
-        $pdo = db_connect();
+    $pdo = db_connect(); // Call the function to establish the database connection
+
+        $sql = "SELECT team.*, COUNT(teamplayers.playerID) AS playerCount FROM team LEFT JOIN teamplayers ON team.teamID = teamplayers.teamID GROUP BY team.teamID";
 
         // Prepare the SQL statement
-        $stmt = $pdo->prepare("SELECT team.*, COUNT(teamplayers.playerID) AS playerCount 
-                               FROM team 
-                               LEFT JOIN teamplayers ON team.teamID = teamplayers.teamID 
-                               GROUP BY team.teamID");
+        $stmt = $pdo->prepare($sql);
 
         // Execute the query
         $stmt->execute();
 
         // Fetch all the team records
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // Return the results
+        return $results;
+
     } catch (PDOException $e) {
         // Handle any database connection errors
         die("Database Error: " . $e->getMessage());
@@ -63,10 +66,10 @@ $teams = fetchTeams();
     <main>
         <div class="welcome">
             <h1>Team Dashboard</h1>
-            <?php if (isset($_SESSION['firstLogin'])) : ?>
-                <h1>Welcome, <?php echo $username; ?>!</h1>
+            <?php if (!isset($_SESSION['firstLogin'])) : ?>
+                <h1>Welcome <?php echo $username; ?>!</h1>
             <?php else : ?>
-                <h1>Welcome back, <?php echo $username; ?>!</h1>
+                <h1>Welcome back <?php echo $username; ?>!</h1>
             <?php endif; ?>
         </div>
 
